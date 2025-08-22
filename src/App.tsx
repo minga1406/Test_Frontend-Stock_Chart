@@ -11,13 +11,9 @@ function App() {
   const { data, loading, error } = useStockData(selectedTimeFrame);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex items-center justify-center">
       <div className="container mx-auto px-4 py-8">
-        <TimeFrameButtons
-          selectedTimeFrame={selectedTimeFrame}
-          onTimeFrameChange={setSelectedTimeFrame}
-        />
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center space-y-6">
           <div className="w-full max-w-5xl">
             {loading ? (
               <div className="flex flex-col items-center justify-center h-96 bg-white rounded-lg shadow-lg">
@@ -42,9 +38,16 @@ function App() {
               <LineChart
                 data={data}
                 timeFrame={selectedTimeFrame}
+                width={900}
                 height={400}
               />
             )}
+          </div>
+          <div className="flex items-center justify-start">
+            <TimeFrameButtons
+              selectedTimeFrame={selectedTimeFrame}
+              onTimeFrameChange={setSelectedTimeFrame}
+            />
           </div>
         </div>
       </div>

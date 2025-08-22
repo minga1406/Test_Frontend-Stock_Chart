@@ -25,7 +25,7 @@ export const TimeFrameButtons: React.FC<TimeFrameButtonsProps> = ({
           onClick={() => onTimeFrameChange(key)}
           className={`px-2 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 ${
             selectedTimeFrame === key
-              ? "bg-gray-300 text-gray-800 border hover:bg-gray-50"
+              ? "bg-gray-200 text-gray-800 border font-bold hover:bg-gray-50"
               : "text-gray-600"
           }`}>
           {label}
